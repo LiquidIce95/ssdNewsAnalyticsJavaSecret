@@ -14,7 +14,8 @@ import java.util.stream.Collectors;
 public abstract class AnalyticsController<
         T extends Analytics,
         R extends AnalyticsRepository<T>,
-        F extends AnalyticsMapper> {
+        D extends AnalyticsGetDTO,
+        F extends AnalyticsMapper<T,D>> {
 
     @Autowired
     protected R repository;
@@ -38,7 +39,7 @@ public abstract class AnalyticsController<
     }
 
     @GetMapping("/{analyticsId}")
-    public ResponseEntity<AnalyticsGetDTO> getAnalyticsById(@PathVariable Long analyticsId) {
+    public ResponseEntity<D> getAnalyticsById(@PathVariable Long analyticsId) {
         return repository.findById(analyticsId)
                 .map(analytics -> new ResponseEntity<>(mapper.convertEntityToGetDTO(analytics), HttpStatus.OK))
                 .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));

@@ -9,7 +9,7 @@ import ssd.Entities.Author.Analytics.RESTapi.DTO.AuthorAnalyticsGetDTO;
 
 @RestController
 @RequestMapping("/author-analytics")
-public class AuthorAnalyticsController extends AnalyticsController<AuthorAnalytics, AuthorAnalyticsRepository, AuthorAnalyticsMapper> {
+public class AuthorAnalyticsController extends AnalyticsController<AuthorAnalytics, AuthorAnalyticsRepository, AuthorAnalyticsGetDTO,AuthorAnalyticsMapper> {
 
     public AuthorAnalyticsController(AuthorAnalyticsRepository repository, AuthorAnalyticsMapper mapper) {
         super(repository, mapper);

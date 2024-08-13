@@ -9,7 +9,7 @@ import ssd.Entities.Article.Analytics.RESTapi.DTO.ArticleAnalyticsGetDTO;
 
 @RestController
 @RequestMapping("/article-analytics")
-public class ArticleAnalyticsController extends AnalyticsController<ArticleAnalytics, ArticleAnalyticsRepository, ArticleAnalyticsMapper> {
+public class ArticleAnalyticsController extends AnalyticsController<ArticleAnalytics, ArticleAnalyticsRepository, ArticleAnalyticsGetDTO,ArticleAnalyticsMapper> {
 
     public ArticleAnalyticsController(ArticleAnalyticsRepository repository, ArticleAnalyticsMapper mapper) {
         super(repository, mapper);
