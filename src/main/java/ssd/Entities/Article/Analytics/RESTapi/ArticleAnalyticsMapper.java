@@ -3,14 +3,14 @@ package ssd.Entities.Article.Analytics.RESTapi;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
-
-import ssd.AbstractClasses.Analytics.RESTapi.AnalyticsMapper;
 import ssd.Entities.Article.Analytics.ArticleAnalytics;
 import ssd.Entities.Article.Analytics.RESTapi.DTO.ArticleAnalyticsGetDTO;
-import ssd.Entities.Article.Base.RESTapi.DTO.ArticleGetDTO;
+import ssd.Entities.Article.Analytics.RESTapi.DTO.ArticleAnalyticsPostDTO;
+import ssd.Entities.Article.Analytics.RESTapi.DTO.ArticleAnalyticsPutDTO;
+import ssd.AbstractClasses.Analytics.RESTapi.AnalyticsMapper;
 
 @Mapper(componentModel = "spring")
-public interface ArticleAnalyticsMapper extends AnalyticsMapper<ArticleAnalytics,ArticleAnalyticsGetDTO> {
+public interface ArticleAnalyticsMapper extends AnalyticsMapper<ArticleAnalytics, ArticleAnalyticsGetDTO, ArticleAnalyticsPostDTO, ArticleAnalyticsPutDTO> {
 
     ArticleAnalyticsMapper INSTANCE = Mappers.getMapper(ArticleAnalyticsMapper.class);
 
@@ -23,5 +23,16 @@ public interface ArticleAnalyticsMapper extends AnalyticsMapper<ArticleAnalytics
     @Mapping(source = "engagementRate", target = "engagementRate")
     ArticleAnalyticsGetDTO convertEntityToGetDTO(ArticleAnalytics articleAnalytics);
 
-    // Additional mappings can be added here if necessary
+    @Override
+    @Mapping(target = "id", ignore = true)
+    ArticleAnalytics convertPostDTOToEntity(ArticleAnalyticsPostDTO postDTO);
+
+    @Override
+    @Mapping(target = "id", ignore = true)
+    @Mapping(source = "putDTO.bias", target = "bias")
+    @Mapping(source = "putDTO.views", target = "views")
+    @Mapping(source = "putDTO.shares", target = "shares")
+    @Mapping(source = "putDTO.likes", target = "likes")
+    @Mapping(source = "putDTO.engagementRate", target = "engagementRate")
+    ArticleAnalytics updateEntityFromPutDTO(ArticleAnalyticsPutDTO putDTO, ArticleAnalytics articleAnalytics);
 }

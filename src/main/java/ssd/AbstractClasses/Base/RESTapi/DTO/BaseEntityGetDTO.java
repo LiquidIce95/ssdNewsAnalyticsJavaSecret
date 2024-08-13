@@ -1,8 +1,8 @@
 package ssd.AbstractClasses.Base.RESTapi.DTO;
 
-import ssd.AbstractClasses.Analytics.Analytics;
+import ssd.AbstractClasses.Analytics.RESTapi.DTO.AnalyticsGetDTO;
 
-public class BaseEntityGetDTO<T extends Analytics> {
+public class BaseEntityGetDTO<T extends AnalyticsGetDTO> {
 
     private Long id;
     private String name;

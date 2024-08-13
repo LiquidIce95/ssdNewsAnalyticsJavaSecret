@@ -1,10 +1,11 @@
 package ssd.AbstractClasses.Raw.RESTapi.DTO;
 
+import ssd.AbstractClasses.Analytics.RESTapi.DTO.AnalyticsPostDTO;
 import ssd.AbstractClasses.Base.RESTapi.DTO.BaseEntityPostDTO;
 
 import java.util.Date;
 
-public class EntityRawPostDTO<T extends BaseEntityPostDTO<?>> {
+public class EntityRawPostDTO<T extends BaseEntityPostDTO<? extends AnalyticsPostDTO>> {
     private String scrapeContent;
     private Date date;
     private String url;

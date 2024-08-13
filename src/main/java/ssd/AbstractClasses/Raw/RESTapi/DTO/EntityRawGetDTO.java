@@ -1,11 +1,13 @@
 package ssd.AbstractClasses.Raw.RESTapi.DTO;
 
 import ssd.AbstractClasses.Base.BaseEntity;
+import ssd.AbstractClasses.Base.RESTapi.DTO.BaseEntityGetDTO;
 import ssd.AbstractClasses.Analytics.Analytics;
+import ssd.AbstractClasses.Analytics.RESTapi.DTO.AnalyticsGetDTO;
 
 import java.util.Date;
 
-public class EntityRawGetDTO<T extends BaseEntity<? extends Analytics>> {
+public class EntityRawGetDTO<T extends BaseEntityGetDTO<? extends AnalyticsGetDTO>> {
 
     private Long id;
     private String scrapeContent;

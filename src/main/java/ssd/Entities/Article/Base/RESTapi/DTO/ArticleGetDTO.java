@@ -2,13 +2,14 @@ package ssd.Entities.Article.Base.RESTapi.DTO;
 
 import ssd.AbstractClasses.Base.RESTapi.DTO.BaseEntityGetDTO;
 import ssd.Entities.Article.Analytics.ArticleAnalytics;
+import ssd.Entities.Article.Analytics.RESTapi.DTO.ArticleAnalyticsGetDTO;
 import ssd.Entities.Author.Base.RESTapi.DTO.AuthorGetDTO;
 import ssd.Entities.Newspaper.Base.RESTapi.DTO.NewspaperGetDTO;
 import ssd.Entities.Owner.Base.RESTapi.DTO.OwnerGetDTO;
 import ssd.Entities.Publisher.Base.RESTapi.DTO.PublisherGetDTO;
 import ssd.Entities.Topic.Base.RESTapi.DTO.TopicGetDTO;
 
-public class ArticleGetDTO extends BaseEntityGetDTO<ArticleAnalytics> {
+public class ArticleGetDTO extends BaseEntityGetDTO<ArticleAnalyticsGetDTO> {
 
     private AuthorGetDTO author;
     private PublisherGetDTO publisher;
