@@ -7,7 +7,7 @@ import ssd.Entities.Newspaper.Raw.RESTapi.DTO.NewspaperRawGetDTO;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2024-08-13T13:50:12+0200",
+    date = "2024-08-13T14:13:04+0200",
     comments = "version: 1.3.1.Final, compiler: javac, environment: Java 17.0.10 (Debian)"
 )
 @Component

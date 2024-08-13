@@ -6,7 +6,7 @@ import org.mapstruct.factory.Mappers;
 import ssd.AbstractClasses.Analytics.Analytics;
 import ssd.AbstractClasses.Analytics.RESTapi.DTO.AnalyticsGetDTO;
 
-public interface AnalyticsMapper {
+public interface AnalyticsMapper<F extends Analytics,D extends AnalyticsGetDTO>{
 
-   AnalyticsGetDTO convertEntityToGetDTO(Analytics analytics);
+   D convertEntityToGetDTO(F analytics);
 }
