@@ -4,16 +4,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import ssd.Entities.Owner.Raw.OwnerRaw;
 import ssd.Entities.Owner.Raw.OwnerRawRepository;
-import ssd.Entities.Owner.Raw.RESTapi.DTO.OwnerRawGetDTO;
-import ssd.Entities.Owner.Raw.RESTapi.DTO.OwnerRawPostDTO;
-import ssd.Entities.Owner.Raw.RESTapi.DTO.OwnerRawPutDTO;
+import ssd.Entities.Owner.OwnerMapper;
+import ssd.Entities.Owner.Base.Owner;
+import ssd.Entities.Owner.Base.RESTapi.OwnerDTO;
+import ssd.Entities.Owner.Analytics.OwnerAnalytics;
+import ssd.Entities.Owner.Analytics.RESTapi.OwnerAnalyticsDTO;
 import ssd.AbstractClasses.Raw.RESTapi.EntityRawController;
 
 @RestController
 @RequestMapping("/owner-raws")
-public class OwnerRawController extends EntityRawController<OwnerRaw, OwnerRawRepository, OwnerRawGetDTO, OwnerRawPostDTO, OwnerRawPutDTO, OwnerRawMapper> {
+public class OwnerRawController extends EntityRawController<OwnerAnalytics, OwnerAnalyticsDTO, Owner, OwnerDTO, OwnerRaw, OwnerRawDTO, OwnerRawRepository, OwnerMapper> {
 
-    public OwnerRawController(OwnerRawRepository repository, OwnerRawMapper mapper) {
-        super(repository, mapper);
+    public OwnerRawController(OwnerRawRepository repository) {
+        super(repository, new OwnerMapper());
     }
 }

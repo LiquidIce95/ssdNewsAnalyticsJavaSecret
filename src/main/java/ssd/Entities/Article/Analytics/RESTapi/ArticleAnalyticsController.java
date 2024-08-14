@@ -4,16 +4,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import ssd.Entities.Article.Analytics.ArticleAnalytics;
 import ssd.Entities.Article.Analytics.ArticleAnalyticsRepository;
-import ssd.Entities.Article.Analytics.RESTapi.DTO.ArticleAnalyticsGetDTO;
-import ssd.Entities.Article.Analytics.RESTapi.DTO.ArticleAnalyticsPostDTO;
-import ssd.Entities.Article.Analytics.RESTapi.DTO.ArticleAnalyticsPutDTO;
+import ssd.Entities.Article.ArticleMapper;
+import ssd.Entities.Article.Base.Article;
+import ssd.Entities.Article.Base.RESTapi.ArticleDTO;
+import ssd.Entities.Article.Raw.ArticleRaw;
+import ssd.Entities.Article.Raw.RESTapi.ArticleRawDTO;
 import ssd.AbstractClasses.Analytics.RESTapi.AnalyticsController;
 
 @RestController
 @RequestMapping("/article-analytics")
-public class ArticleAnalyticsController extends AnalyticsController<ArticleAnalytics, ArticleAnalyticsRepository, ArticleAnalyticsGetDTO, ArticleAnalyticsPostDTO, ArticleAnalyticsPutDTO, ArticleAnalyticsMapper> {
+public class ArticleAnalyticsController extends AnalyticsController<ArticleAnalytics, ArticleAnalyticsDTO, Article, ArticleDTO, ArticleRaw, ArticleRawDTO, ArticleAnalyticsRepository, ArticleMapper> {
 
-    public ArticleAnalyticsController(ArticleAnalyticsRepository repository, ArticleAnalyticsMapper mapper) {
-        super(repository, mapper);
+    public ArticleAnalyticsController(ArticleAnalyticsRepository repository) {
+        super(repository, new ArticleMapper());
     }
 }

@@ -4,95 +4,88 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import ssd.AbstractClasses.AbstractMapper;
 import ssd.AbstractClasses.Analytics.Analytics;
-import ssd.AbstractClasses.Analytics.RESTapi.DTO.AnalyticsGetDTO;
-import ssd.AbstractClasses.Analytics.RESTapi.DTO.AnalyticsPostDTO;
-import ssd.AbstractClasses.Analytics.RESTapi.DTO.AnalyticsPutDTO;
+import ssd.AbstractClasses.Analytics.RESTapi.AnalyticsDTO;
 import ssd.AbstractClasses.Base.BaseEntity;
 import ssd.AbstractClasses.Base.BaseEntityRepository;
-import ssd.AbstractClasses.Base.RESTapi.DTO.BaseEntityGetDTO;
-import ssd.AbstractClasses.Base.RESTapi.DTO.BaseEntityPostDTO;
-import ssd.AbstractClasses.Base.RESTapi.DTO.BaseEntityPutDTO;
+import ssd.AbstractClasses.Raw.EntityRaw;
+import ssd.AbstractClasses.Raw.RESTapi.EntityRawDTO;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 public abstract class BaseEntityController<
-        E extends BaseEntity<? extends Analytics>,
-        R extends BaseEntityRepository<E>,
-        G extends BaseEntityGetDTO<? extends AnalyticsGetDTO>,
-        P extends BaseEntityPostDTO<? extends AnalyticsPostDTO>,
-        U extends BaseEntityPutDTO<? extends AnalyticsPutDTO>,
-        M extends BaseEntityMapper<E, G, P, U>> {
+        A extends Analytics,
+        AD extends AnalyticsDTO,
+        B extends BaseEntity<A>,
+        BD extends BaseEntityDTO<AD>,
+        R extends EntityRaw<B>,
+        RD extends EntityRawDTO<BD>,
+        Re extends BaseEntityRepository<B>,
+        M extends AbstractMapper<A, AD, B, BD, R, RD>> {
 
     @Autowired
-    protected R repository;
+    protected Re repository;
 
     @Autowired
     protected M mapper;
 
     @Autowired
-    public BaseEntityController(R repository, M mapper) {
+    public BaseEntityController(Re repository, M mapper) {
         this.repository = repository;
         this.mapper = mapper;
     }
 
-    @PostMapping("/")
-    public ResponseEntity<G> createEntity(@RequestBody P postDTO) {
-        E entity = mapper.convertPostDTOToEntity(postDTO);
-        E savedEntity = repository.saveAndFlush(entity);
-        G getDTO = mapper.convertEntityToGetDTO(savedEntity);
-        return new ResponseEntity<>(getDTO, HttpStatus.CREATED);
-    }
-
     @PutMapping("/{id}")
-    public ResponseEntity<G> updateEntity(@PathVariable Long id, @RequestBody U putDTO) {
+    public ResponseEntity<BD> updateEntity(@PathVariable Long id, @RequestBody BD putDTO) {
         return repository.findById(id).map(existingEntity -> {
-            E updatedEntity = mapper.updateEntityFromPutDTO(putDTO, existingEntity);
+            B updatedEntity = mapper.updateBaseEntityFromDTO(putDTO, existingEntity);
             repository.saveAndFlush(updatedEntity);
-            G getDTO = mapper.convertEntityToGetDTO(updatedEntity);
+            BD getDTO = mapper.convertBaseEntityToDTO(updatedEntity);
             return new ResponseEntity<>(getDTO, HttpStatus.OK);
         }).orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<G> getEntityById(@PathVariable Long id) {
+    public ResponseEntity<BD> getEntityById(@PathVariable Long id) {
         return repository.findById(id)
-                .map(entity -> new ResponseEntity<>(mapper.convertEntityToGetDTO(entity), HttpStatus.OK))
+                .map(entity -> new ResponseEntity<>(mapper.convertBaseEntityToDTO(entity), HttpStatus.OK))
                 .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
     @GetMapping("/")
-    public ResponseEntity<List<G>> getAllEntities() {
-        List<E> entities = repository.findAll();
-        List<G> getDTOs = entities.stream()
-                .map(mapper::convertEntityToGetDTO)
+    public ResponseEntity<List<BD>> getAllEntities() {
+        List<B> entities = repository.findAll();
+        List<BD> getDTOs = entities.stream()
+                .map(mapper::convertBaseEntityToDTO)
                 .collect(Collectors.toList());
         return new ResponseEntity<>(getDTOs, HttpStatus.OK);
     }
     @GetMapping("/name/{name}")
-    public ResponseEntity<List<G>> getEntitiesByName(@PathVariable String name) {
-        List<E> entities = repository.findByName(name);
+    public ResponseEntity<List<BD>> getEntitiesByName(@PathVariable String name) {
+        List<B> entities = repository.findByName(name);
         if (entities.isEmpty()) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         } else {
-            List<G> dtoList = entities.stream()
-                    .map(mapper::convertEntityToGetDTO)
+            List<BD> dtoList = entities.stream()
+                    .map(mapper::convertBaseEntityToDTO)
                     .collect(Collectors.toList());
             return new ResponseEntity<>(dtoList, HttpStatus.OK);
         }
     }
 
     @GetMapping("/popular/{amount}")
-    public ResponseEntity<List<G>> getPopularEntities(@PathVariable int amount) {
-        List<E> entities = repository.findAll();
+    public ResponseEntity<List<BD>> getPopularEntities(@PathVariable int amount) {
+        List<B> entities = repository.findAll();
         if (entities.isEmpty()) {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         } else {
             int size = entities.size();
-            List<E> popularEntities = entities.subList(Math.max(size - amount, 0), size);
-            List<G> dtoList = popularEntities.stream()
-                    .map(mapper::convertEntityToGetDTO)
+            List<B> popularEntities = entities.subList(Math.max(size - amount, 0), size);
+            List<BD> dtoList = popularEntities.stream()
+                    .map(mapper::convertBaseEntityToDTO)
                     .collect(Collectors.toList());
             return new ResponseEntity<>(dtoList, HttpStatus.OK);
         }

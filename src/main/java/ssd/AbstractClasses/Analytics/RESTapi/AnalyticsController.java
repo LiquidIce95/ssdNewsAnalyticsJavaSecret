@@ -4,66 +4,63 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import ssd.AbstractClasses.AbstractMapper;
 import ssd.AbstractClasses.Analytics.Analytics;
 import ssd.AbstractClasses.Analytics.AnalyticsRepository;
-import ssd.AbstractClasses.Analytics.RESTapi.DTO.AnalyticsGetDTO;
-import ssd.AbstractClasses.Analytics.RESTapi.DTO.AnalyticsPostDTO;
-import ssd.AbstractClasses.Analytics.RESTapi.DTO.AnalyticsPutDTO;
+import ssd.AbstractClasses.Base.BaseEntity;
+import ssd.AbstractClasses.Base.RESTapi.BaseEntityDTO;
+import ssd.AbstractClasses.Raw.EntityRaw;
+import ssd.AbstractClasses.Raw.RESTapi.EntityRawDTO;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 public abstract class AnalyticsController<
-        E extends Analytics,
-        R extends AnalyticsRepository<E>,
-        G extends AnalyticsGetDTO,
-        P extends AnalyticsPostDTO,
-        U extends AnalyticsPutDTO,
-        M extends AnalyticsMapper<E, G, P, U>> {
+        A extends Analytics,
+        AD extends AnalyticsDTO,
+        B extends BaseEntity<A>,
+        BD extends BaseEntityDTO<AD>,
+        R extends EntityRaw<B>,
+        RD extends EntityRawDTO<BD>,
+        Re extends AnalyticsRepository<A>,
+        M extends AbstractMapper<A,AD,B,BD,R,RD>> {
 
     @Autowired
-    protected R repository;
+    protected Re repository;
 
     @Autowired
     protected M mapper;
 
     @Autowired
-    public AnalyticsController(R repository, M mapper) {
+    public AnalyticsController(Re repository, M mapper) {
         this.repository = repository;
         this.mapper = mapper;
     }
 
 
-    @PostMapping("/")
-    public ResponseEntity<G> createAnalytics(@RequestBody P postDTO) {
-        E entity = mapper.convertPostDTOToEntity(postDTO);
-        E savedEntity = repository.saveAndFlush(entity);
-        G getDTO = mapper.convertEntityToGetDTO(savedEntity);
-        return new ResponseEntity<>(getDTO, HttpStatus.CREATED);
-    }
-
     @PutMapping("/{id}")
-    public ResponseEntity<G> updateAnalytics(@PathVariable Long id, @RequestBody U putDTO) {
+    public ResponseEntity<AD> updateAnalytics(@PathVariable Long id, @RequestBody AD putDTO) {
         return repository.findById(id).map(existingEntity -> {
-            E updatedEntity = mapper.updateEntityFromPutDTO(putDTO, existingEntity);
+            A updatedEntity = mapper.updateAnalyticsFromDTO(putDTO, existingEntity);
             repository.saveAndFlush(updatedEntity);
-            G getDTO = mapper.convertEntityToGetDTO(updatedEntity);
+            AD getDTO = mapper.convertAnalyticsToDTO(updatedEntity);
             return new ResponseEntity<>(getDTO, HttpStatus.OK);
         }).orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<G> getAnalyticsById(@PathVariable Long id) {
+    public ResponseEntity<AD> getAnalyticsById(@PathVariable Long id) {
         return repository.findById(id)
-                .map(entity -> new ResponseEntity<>(mapper.convertEntityToGetDTO(entity), HttpStatus.OK))
+                .map(entity -> new ResponseEntity<>(mapper.convertAnalyticsToDTO(entity), HttpStatus.OK))
                 .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
     @GetMapping("/")
-    public ResponseEntity<List<G>> getAllAnalytics() {
-        List<E> entities = repository.findAll();
-        List<G> getDTOs = entities.stream()
-                .map(mapper::convertEntityToGetDTO)
+    public ResponseEntity<List<AD>> getAllAnalytics() {
+        List<A> entities = repository.findAll();
+        List<AD> getDTOs = entities.stream()
+                .map(mapper::convertAnalyticsToDTO)
                 .collect(Collectors.toList());
         return new ResponseEntity<>(getDTOs, HttpStatus.OK);
     }

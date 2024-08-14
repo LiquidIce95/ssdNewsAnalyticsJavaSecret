@@ -8,7 +8,6 @@ import ssd.Entities.Author.Base.Author;
 import ssd.Entities.Newspaper.Base.Newspaper;
 import ssd.Entities.Owner.Base.Owner;
 import ssd.Entities.Publisher.Base.Publisher;
-import ssd.Entities.Topic.Base.Topic;
 /*  */
 @Entity
 @Table(name = "article")
@@ -23,9 +22,6 @@ public class Article extends BaseEntity<ArticleAnalytics> {
     @JoinColumn(name = "publisher_id", nullable = false)
     private Publisher publisher;
 
-    @ManyToOne
-    @JoinColumn(name = "topic_id", nullable = false)
-    private Topic topic;
 
     @ManyToOne
     @JoinColumn(name = "owner_id", nullable = false)
@@ -60,13 +56,6 @@ public class Article extends BaseEntity<ArticleAnalytics> {
         this.publisher = publisher;
     }
 
-    public Topic getTopic() {
-        return topic;
-    }
-
-    public void setTopic(Topic topic) {
-        this.topic = topic;
-    }
 
     public Owner getOwner() {
         return owner;

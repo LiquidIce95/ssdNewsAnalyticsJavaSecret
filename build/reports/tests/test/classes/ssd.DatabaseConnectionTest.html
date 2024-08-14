@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.006s</div>
+<div class="counter">0.143s</div>
 <p>duration</p>
 </div>
 </td>
@@ -79,12 +79,12 @@
 </thead>
 <tr>
 <td class="success">testDatabaseConnection()</td>
-<td class="success">0.002s</td>
+<td class="success">0.135s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">testJdbcTemplate()</td>
-<td class="success">0.004s</td>
+<td class="success">0.008s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -92,12 +92,355 @@
 <div id="tab1" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>2024-08-13 17:29:14.609  INFO 890376 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [ssd.DatabaseConnectionTest], using SpringBootContextLoader
-2024-08-13 17:29:14.609  INFO 890376 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [ssd.DatabaseConnectionTest]: no resource found for suffixes {-context.xml, Context.groovy}.
-2024-08-13 17:29:14.609  INFO 890376 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [ssd.DatabaseConnectionTest]: DatabaseConnectionTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2024-08-13 17:29:14.610  INFO 890376 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration ssd.SSDApplication for test class ssd.DatabaseConnectionTest
-2024-08-13 17:29:14.610  INFO 890376 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
-2024-08-13 17:29:14.611  INFO 890376 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@15c0a8ad, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@10bf2185, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@14c06f50, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@6230a15a, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@7225f871, org.springframework.test.context.support.DirtiesContextTestExecutionListener@1bff4cb9, org.springframework.test.context.transaction.TransactionalTestExecutionListener@c521a79, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@6b0f50d8, org.springframework.test.context.event.EventPublishingTestExecutionListener@36b4cbb8, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@57cfd353, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@4bd29a01, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@5a4a8a33, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@4a3363c9, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@63cf6497, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@3c12f87d]
+<pre>15:18:03.471 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+15:18:03.476 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+15:18:03.494 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [ssd.DatabaseConnectionTest] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+15:18:03.499 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [ssd.DatabaseConnectionTest], using SpringBootContextLoader
+15:18:03.501 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [ssd.DatabaseConnectionTest]: class path resource [ssd/DatabaseConnectionTest-context.xml] does not exist
+15:18:03.502 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [ssd.DatabaseConnectionTest]: class path resource [ssd/DatabaseConnectionTestContext.groovy] does not exist
+15:18:03.502 [Test worker] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [ssd.DatabaseConnectionTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+15:18:03.502 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [ssd.DatabaseConnectionTest]: DatabaseConnectionTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+15:18:03.522 [Test worker] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [ssd.DatabaseConnectionTest]
+15:18:03.554 [Test worker] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [/home/david/SSDProjects/SSD_News_Analytics/ssdNewsAnalyticsJavaSecret/build/classes/java/main/ssd/SSDApplication.class]
+15:18:03.554 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration ssd.SSDApplication for test class ssd.DatabaseConnectionTest
+15:18:03.599 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [ssd.DatabaseConnectionTest]: using defaults.
+15:18:03.599 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+15:18:03.606 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@2783717b, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@76f7d241, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@4a335fa8, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@3f363cf5, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@3829ac1, org.springframework.test.context.support.DirtiesContextTestExecutionListener@4baf352a, org.springframework.test.context.transaction.TransactionalTestExecutionListener@1bb1fde8, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@15eebbff, org.springframework.test.context.event.EventPublishingTestExecutionListener@22d6f11, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@30990c1b, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@2453f95d, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@44828f6b, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@2dbe250d, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@553f1d75, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@6e1d8f9e]
+15:18:03.608 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@a5b0b86 testClass = DatabaseConnectionTest, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@4b3c354a testClass = DatabaseConnectionTest, locations = '{}', classes = '{class ssd.SSDApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@78641d23, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@141e5bef, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@c9d0d6, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@7a1a14a4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@3fed2870, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@687e99d8], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; false]], class annotated with @DirtiesContext [false] with mode [null].
+15:18:03.615 [Test worker] DEBUG org.springframework.test.context.support.DependencyInjectionTestExecutionListener - Performing dependency injection for test context [[DefaultTestContext@a5b0b86 testClass = DatabaseConnectionTest, testInstance = ssd.DatabaseConnectionTest@1c55f277, testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@4b3c354a testClass = DatabaseConnectionTest, locations = '{}', classes = '{class ssd.SSDApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@78641d23, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@141e5bef, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@c9d0d6, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@7a1a14a4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@3fed2870, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@687e99d8], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; false, 'org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -&gt; false]]].
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.7.8)
+
+2024-08-14 15:18:03.785  INFO 574099 --- [    Test worker] ssd.DatabaseConnectionTest               : Starting DatabaseConnectionTest using Java 17.0.10 on COMMODORE with PID 574099 (started by david in /home/david/SSDProjects/SSD_News_Analytics/ssdNewsAnalyticsJavaSecret)
+2024-08-14 15:18:03.786  INFO 574099 --- [    Test worker] ssd.DatabaseConnectionTest               : No active profile set, falling back to 1 default profile: &quot;default&quot;
+2024-08-14 15:18:04.111  INFO 574099 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-14 15:18:04.176  INFO 574099 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 61 ms. Found 15 JPA repository interfaces.
+2024-08-14 15:18:04.565  INFO 574099 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2024-08-14 15:18:04.571  INFO 574099 --- [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-14 15:18:04.572  INFO 574099 --- [    Test worker] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2024-08-14 15:18:04.632  INFO 574099 --- [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-14 15:18:04.632  INFO 574099 --- [    Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 834 ms
+2024-08-14 15:18:04.812  INFO 574099 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-14 15:18:04.846  INFO 574099 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.14.Final
+2024-08-14 15:18:04.963  INFO 574099 --- [    Test worker] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2024-08-14 15:18:05.038  INFO 574099 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-08-14 15:18:05.210  INFO 574099 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-08-14 15:18:05.223  INFO 574099 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+Hibernate: 
+    
+    create table article (
+       entity_id  bigserial not null,
+        name varchar(255) not null,
+        content TEXT not null,
+        analytics_id int8 not null,
+        author_id int8 not null,
+        newspaper_id int8 not null,
+        owner_id int8 not null,
+        publisher_id int8 not null,
+        primary key (entity_id)
+    )
+Hibernate: 
+    
+    create table article_analytics (
+       analytics_id  bigserial not null,
+        bias varchar(255) not null,
+        engagement_rate float8 not null,
+        likes int4 not null,
+        shares int4 not null,
+        views int4 not null,
+        primary key (analytics_id)
+    )
+Hibernate: 
+    
+    create table article_raw (
+       entity_raw_id  bigserial not null,
+        date timestamp not null,
+        scrape_content varchar(255) not null,
+        url varchar(255) not null,
+        entity_id int8 not null,
+        primary key (entity_raw_id)
+    )
+Hibernate: 
+    
+    create table author (
+       entity_id  bigserial not null,
+        name varchar(255) not null,
+        analytics_id int8 not null,
+        primary key (entity_id)
+    )
+Hibernate: 
+    
+    create table author_analytics (
+       analytics_id  bigserial not null,
+        bias varchar(255) not null,
+        engagement_rate float8 not null,
+        likes int4 not null,
+        shares int4 not null,
+        views int4 not null,
+        primary key (analytics_id)
+    )
+Hibernate: 
+    
+    create table author_raw (
+       entity_raw_id  bigserial not null,
+        date timestamp not null,
+        scrape_content varchar(255) not null,
+        url varchar(255) not null,
+        entity_id int8 not null,
+        primary key (entity_raw_id)
+    )
+Hibernate: 
+    
+    create table newspaper (
+       entity_id  bigserial not null,
+        name varchar(255) not null,
+        analytics_id int8 not null,
+        primary key (entity_id)
+    )
+Hibernate: 
+    
+    create table newspaper_analytics (
+       analytics_id  bigserial not null,
+        bias varchar(255) not null,
+        engagement_rate float8 not null,
+        likes int4 not null,
+        shares int4 not null,
+        views int4 not null,
+        primary key (analytics_id)
+    )
+Hibernate: 
+    
+    create table newspaper_raw (
+       entity_raw_id  bigserial not null,
+        date timestamp not null,
+        scrape_content varchar(255) not null,
+        url varchar(255) not null,
+        entity_id int8 not null,
+        primary key (entity_raw_id)
+    )
+Hibernate: 
+    
+    create table owner (
+       entity_id  bigserial not null,
+        name varchar(255) not null,
+        analytics_id int8 not null,
+        primary key (entity_id)
+    )
+Hibernate: 
+    
+    create table owner_analytics (
+       analytics_id  bigserial not null,
+        bias varchar(255) not null,
+        engagement_rate float8 not null,
+        likes int4 not null,
+        shares int4 not null,
+        views int4 not null,
+        primary key (analytics_id)
+    )
+Hibernate: 
+    
+    create table owner_raw (
+       entity_raw_id  bigserial not null,
+        date timestamp not null,
+        scrape_content varchar(255) not null,
+        url varchar(255) not null,
+        entity_id int8 not null,
+        primary key (entity_raw_id)
+    )
+Hibernate: 
+    
+    create table publisher (
+       entity_id  bigserial not null,
+        name varchar(255) not null,
+        analytics_id int8 not null,
+        primary key (entity_id)
+    )
+Hibernate: 
+    
+    create table publisher_analytics (
+       analytics_id  bigserial not null,
+        bias varchar(255) not null,
+        engagement_rate float8 not null,
+        likes int4 not null,
+        shares int4 not null,
+        views int4 not null,
+        primary key (analytics_id)
+    )
+Hibernate: 
+    
+    create table publisher_raw (
+       entity_raw_id  bigserial not null,
+        date timestamp not null,
+        scrape_content varchar(255) not null,
+        url varchar(255) not null,
+        entity_id int8 not null,
+        primary key (entity_raw_id)
+    )
+Hibernate: 
+    
+    alter table article 
+       add constraint FKlo8byp8rylo05jumaqi731717 
+       foreign key (analytics_id) 
+       references article_analytics
+Hibernate: 
+    
+    alter table article 
+       add constraint FK92kabsgi6rs0pmr2866m7q7m9 
+       foreign key (author_id) 
+       references author
+Hibernate: 
+    
+    alter table article 
+       add constraint FKpy5twjjulwxyaq0hfo1imr8pm 
+       foreign key (newspaper_id) 
+       references newspaper
+Hibernate: 
+    
+    alter table article 
+       add constraint FKcvtgu9j4jhd9w1fdhw9uoqvjv 
+       foreign key (owner_id) 
+       references owner
+Hibernate: 
+    
+    alter table article 
+       add constraint FKad5iivhsmwwugsh8yj77jlk0i 
+       foreign key (publisher_id) 
+       references publisher
+Hibernate: 
+    
+    alter table article_raw 
+       add constraint FKdftns6iliu8nh5qpvcoxuj3c2 
+       foreign key (entity_id) 
+       references article
+Hibernate: 
+    
+    alter table author 
+       add constraint FKskk0l85kkrvp1cif2g0bdwxcr 
+       foreign key (analytics_id) 
+       references author_analytics
+Hibernate: 
+    
+    alter table author_raw 
+       add constraint FKbm0s3chpm8ext6ovbsa3muyl9 
+       foreign key (entity_id) 
+       references author
+Hibernate: 
+    
+    alter table newspaper 
+       add constraint FK3u4csrrd4kadalnvxe084ioav 
+       foreign key (analytics_id) 
+       references newspaper_analytics
+Hibernate: 
+    
+    alter table newspaper_raw 
+       add constraint FKa5i0bepl659gtebmns1xa11kl 
+       foreign key (entity_id) 
+       references newspaper
+Hibernate: 
+    
+    alter table owner 
+       add constraint FK714hhoossxdfo31bfqugjp4w2 
+       foreign key (analytics_id) 
+       references owner_analytics
+Hibernate: 
+    
+    alter table owner_raw 
+       add constraint FKe5kjivytgyvso4r920ahiw9r1 
+       foreign key (entity_id) 
+       references owner
+Hibernate: 
+    
+    alter table publisher 
+       add constraint FKm4sq31oicgblmqe6kc3alk1tt 
+       foreign key (analytics_id) 
+       references publisher_analytics
+Hibernate: 
+    
+    alter table publisher_raw 
+       add constraint FKko9pyexro7m6mqintqjmsk8mi 
+       foreign key (entity_id) 
+       references publisher
+2024-08-14 15:18:05.815  INFO 574099 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-08-14 15:18:05.821  INFO 574099 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-14 15:18:06.441  WARN 574099 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-14 15:18:06.948  INFO 574099 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2024-08-14 15:18:06.956  INFO 574099 --- [    Test worker] ssd.DatabaseConnectionTest               : Started DatabaseConnectionTest in 3.328 seconds (JVM running for 3.932)
+Hibernate: 
+    insert 
+    into
+        author_analytics
+        (bias, engagement_rate, likes, shares, views) 
+    values
+        (?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        publisher_analytics
+        (bias, engagement_rate, likes, shares, views) 
+    values
+        (?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        owner_analytics
+        (bias, engagement_rate, likes, shares, views) 
+    values
+        (?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        newspaper_analytics
+        (bias, engagement_rate, likes, shares, views) 
+    values
+        (?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        article_analytics
+        (bias, engagement_rate, likes, shares, views) 
+    values
+        (?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        author
+        (analytics_id, name) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        publisher
+        (analytics_id, name) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        owner
+        (analytics_id, name) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        newspaper
+        (analytics_id, name) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        article
+        (analytics_id, name, author_id, content, newspaper_id, owner_id, publisher_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
 </pre>
 </span>
 </div>
@@ -109,7 +452,7 @@
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 7.6</a> at Aug 13, 2024, 5:29:14 PM</p>
+<a href="http://www.gradle.org">Gradle 7.6</a> at Aug 14, 2024, 3:18:08 PM</p>
 </div>
 </div>
 </body>

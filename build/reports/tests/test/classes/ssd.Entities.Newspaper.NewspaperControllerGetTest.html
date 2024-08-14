@@ -1,0 +1,1303 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - NewspaperControllerGetTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>NewspaperControllerGetTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/ssd.Entities.Newspaper.html">ssd.Entities.Newspaper</a> &gt; NewspaperControllerGetTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">8</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.161s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">testGetAllNewspapers()</td>
+<td class="success">0.023s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testGetAllNewspapers_emptyDatabase()</td>
+<td class="success">0.019s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testGetNewspaperById()</td>
+<td class="success">0.016s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testGetNewspaperById_notFound()</td>
+<td class="success">0.030s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testGetNewspapersByName()</td>
+<td class="success">0.026s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testGetNewspapersByName_notFound()</td>
+<td class="success">0.015s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testGetPopularNewspapers()</td>
+<td class="success">0.015s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testGetPopularNewspapers_noContent()</td>
+<td class="success">0.017s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>2024-08-14 15:18:08.064  INFO 574099 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [ssd.Entities.Newspaper.NewspaperControllerGetTest], using SpringBootContextLoader
+2024-08-14 15:18:08.064  INFO 574099 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [ssd.Entities.Newspaper.NewspaperControllerGetTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2024-08-14 15:18:08.064  INFO 574099 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [ssd.Entities.Newspaper.NewspaperControllerGetTest]: NewspaperControllerGetTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-08-14 15:18:08.067  INFO 574099 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration ssd.SSDApplication for test class ssd.Entities.Newspaper.NewspaperControllerGetTest
+2024-08-14 15:18:08.067  INFO 574099 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2024-08-14 15:18:08.067  INFO 574099 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@64dbb343, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@2b0483f2, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@b8e6981, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@1e40edb7, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@27381497, org.springframework.test.context.support.DirtiesContextTestExecutionListener@282c0891, org.springframework.test.context.transaction.TransactionalTestExecutionListener@5096be74, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@4922dc84, org.springframework.test.context.event.EventPublishingTestExecutionListener@2ed9e59b, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@66790851, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@3796ff4, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@5ce045e3, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@3df496d9, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@13e12ab6, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@5bafe1f1]
+Hibernate: 
+    select
+        article0_.entity_id as entity_i1_0_,
+        article0_.analytics_id as analytic4_0_,
+        article0_.name as name2_0_,
+        article0_.author_id as author_i5_0_,
+        article0_.content as content3_0_,
+        article0_.newspaper_id as newspape6_0_,
+        article0_.owner_id as owner_id7_0_,
+        article0_.publisher_id as publishe8_0_ 
+    from
+        article article0_
+Hibernate: 
+    select
+        newspaper0_.entity_id as entity_i1_6_,
+        newspaper0_.analytics_id as analytic3_6_,
+        newspaper0_.name as name2_6_ 
+    from
+        newspaper newspaper0_
+Hibernate: 
+    select
+        owner0_.entity_id as entity_i1_9_,
+        owner0_.analytics_id as analytic3_9_,
+        owner0_.name as name2_9_ 
+    from
+        owner owner0_
+Hibernate: 
+    select
+        publisher0_.entity_id as entity_i1_12_,
+        publisher0_.analytics_id as analytic3_12_,
+        publisher0_.name as name2_12_ 
+    from
+        publisher publisher0_
+Hibernate: 
+    select
+        author0_.entity_id as entity_i1_3_,
+        author0_.analytics_id as analytic3_3_,
+        author0_.name as name2_3_ 
+    from
+        author author0_
+Hibernate: 
+    select
+        articleana0_.analytics_id as analytic1_1_,
+        articleana0_.bias as bias2_1_,
+        articleana0_.engagement_rate as engageme3_1_,
+        articleana0_.likes as likes4_1_,
+        articleana0_.shares as shares5_1_,
+        articleana0_.views as views6_1_ 
+    from
+        article_analytics articleana0_
+Hibernate: 
+    select
+        newspapera0_.analytics_id as analytic1_7_,
+        newspapera0_.bias as bias2_7_,
+        newspapera0_.engagement_rate as engageme3_7_,
+        newspapera0_.likes as likes4_7_,
+        newspapera0_.shares as shares5_7_,
+        newspapera0_.views as views6_7_ 
+    from
+        newspaper_analytics newspapera0_
+Hibernate: 
+    select
+        owneranaly0_.analytics_id as analytic1_10_,
+        owneranaly0_.bias as bias2_10_,
+        owneranaly0_.engagement_rate as engageme3_10_,
+        owneranaly0_.likes as likes4_10_,
+        owneranaly0_.shares as shares5_10_,
+        owneranaly0_.views as views6_10_ 
+    from
+        owner_analytics owneranaly0_
+Hibernate: 
+    select
+        publishera0_.analytics_id as analytic1_13_,
+        publishera0_.bias as bias2_13_,
+        publishera0_.engagement_rate as engageme3_13_,
+        publishera0_.likes as likes4_13_,
+        publishera0_.shares as shares5_13_,
+        publishera0_.views as views6_13_ 
+    from
+        publisher_analytics publishera0_
+Hibernate: 
+    select
+        authoranal0_.analytics_id as analytic1_4_,
+        authoranal0_.bias as bias2_4_,
+        authoranal0_.engagement_rate as engageme3_4_,
+        authoranal0_.likes as likes4_4_,
+        authoranal0_.shares as shares5_4_,
+        authoranal0_.views as views6_4_ 
+    from
+        author_analytics authoranal0_
+Hibernate: 
+    delete 
+    from
+        author_analytics 
+    where
+        analytics_id=?
+Hibernate: 
+    insert 
+    into
+        newspaper_analytics
+        (bias, engagement_rate, likes, shares, views) 
+    values
+        (?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        newspaper
+        (analytics_id, name) 
+    values
+        (?, ?)
+Hibernate: 
+    select
+        newspaper0_.entity_id as entity_i1_6_,
+        newspaper0_.analytics_id as analytic3_6_,
+        newspaper0_.name as name2_6_ 
+    from
+        newspaper newspaper0_
+Hibernate: 
+    select
+        newspapera0_.analytics_id as analytic1_7_0_,
+        newspapera0_.bias as bias2_7_0_,
+        newspapera0_.engagement_rate as engageme3_7_0_,
+        newspapera0_.likes as likes4_7_0_,
+        newspapera0_.shares as shares5_7_0_,
+        newspapera0_.views as views6_7_0_ 
+    from
+        newspaper_analytics newspapera0_ 
+    where
+        newspapera0_.analytics_id=?
+Hibernate: 
+    delete 
+    from
+        newspaper 
+    where
+        entity_id=?
+Hibernate: 
+    select
+        newspaper0_.entity_id as entity_i1_6_,
+        newspaper0_.analytics_id as analytic3_6_,
+        newspaper0_.name as name2_6_ 
+    from
+        newspaper newspaper0_
+Hibernate: 
+    select
+        article0_.entity_id as entity_i1_0_,
+        article0_.analytics_id as analytic4_0_,
+        article0_.name as name2_0_,
+        article0_.author_id as author_i5_0_,
+        article0_.content as content3_0_,
+        article0_.newspaper_id as newspape6_0_,
+        article0_.owner_id as owner_id7_0_,
+        article0_.publisher_id as publishe8_0_ 
+    from
+        article article0_
+Hibernate: 
+    select
+        newspaper0_.entity_id as entity_i1_6_,
+        newspaper0_.analytics_id as analytic3_6_,
+        newspaper0_.name as name2_6_ 
+    from
+        newspaper newspaper0_
+Hibernate: 
+    select
+        owner0_.entity_id as entity_i1_9_,
+        owner0_.analytics_id as analytic3_9_,
+        owner0_.name as name2_9_ 
+    from
+        owner owner0_
+Hibernate: 
+    select
+        publisher0_.entity_id as entity_i1_12_,
+        publisher0_.analytics_id as analytic3_12_,
+        publisher0_.name as name2_12_ 
+    from
+        publisher publisher0_
+Hibernate: 
+    select
+        author0_.entity_id as entity_i1_3_,
+        author0_.analytics_id as analytic3_3_,
+        author0_.name as name2_3_ 
+    from
+        author author0_
+Hibernate: 
+    select
+        articleana0_.analytics_id as analytic1_1_,
+        articleana0_.bias as bias2_1_,
+        articleana0_.engagement_rate as engageme3_1_,
+        articleana0_.likes as likes4_1_,
+        articleana0_.shares as shares5_1_,
+        articleana0_.views as views6_1_ 
+    from
+        article_analytics articleana0_
+Hibernate: 
+    select
+        newspapera0_.analytics_id as analytic1_7_,
+        newspapera0_.bias as bias2_7_,
+        newspapera0_.engagement_rate as engageme3_7_,
+        newspapera0_.likes as likes4_7_,
+        newspapera0_.shares as shares5_7_,
+        newspapera0_.views as views6_7_ 
+    from
+        newspaper_analytics newspapera0_
+Hibernate: 
+    delete 
+    from
+        newspaper_analytics 
+    where
+        analytics_id=?
+Hibernate: 
+    select
+        owneranaly0_.analytics_id as analytic1_10_,
+        owneranaly0_.bias as bias2_10_,
+        owneranaly0_.engagement_rate as engageme3_10_,
+        owneranaly0_.likes as likes4_10_,
+        owneranaly0_.shares as shares5_10_,
+        owneranaly0_.views as views6_10_ 
+    from
+        owner_analytics owneranaly0_
+Hibernate: 
+    select
+        publishera0_.analytics_id as analytic1_13_,
+        publishera0_.bias as bias2_13_,
+        publishera0_.engagement_rate as engageme3_13_,
+        publishera0_.likes as likes4_13_,
+        publishera0_.shares as shares5_13_,
+        publishera0_.views as views6_13_ 
+    from
+        publisher_analytics publishera0_
+Hibernate: 
+    select
+        authoranal0_.analytics_id as analytic1_4_,
+        authoranal0_.bias as bias2_4_,
+        authoranal0_.engagement_rate as engageme3_4_,
+        authoranal0_.likes as likes4_4_,
+        authoranal0_.shares as shares5_4_,
+        authoranal0_.views as views6_4_ 
+    from
+        author_analytics authoranal0_
+Hibernate: 
+    insert 
+    into
+        newspaper_analytics
+        (bias, engagement_rate, likes, shares, views) 
+    values
+        (?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        newspaper
+        (analytics_id, name) 
+    values
+        (?, ?)
+Hibernate: 
+    select
+        newspaper0_.entity_id as entity_i1_6_,
+        newspaper0_.analytics_id as analytic3_6_,
+        newspaper0_.name as name2_6_ 
+    from
+        newspaper newspaper0_ 
+    where
+        newspaper0_.name=?
+Hibernate: 
+    select
+        article0_.entity_id as entity_i1_0_,
+        article0_.analytics_id as analytic4_0_,
+        article0_.name as name2_0_,
+        article0_.author_id as author_i5_0_,
+        article0_.content as content3_0_,
+        article0_.newspaper_id as newspape6_0_,
+        article0_.owner_id as owner_id7_0_,
+        article0_.publisher_id as publishe8_0_ 
+    from
+        article article0_
+Hibernate: 
+    select
+        newspaper0_.entity_id as entity_i1_6_,
+        newspaper0_.analytics_id as analytic3_6_,
+        newspaper0_.name as name2_6_ 
+    from
+        newspaper newspaper0_
+Hibernate: 
+    select
+        newspapera0_.analytics_id as analytic1_7_0_,
+        newspapera0_.bias as bias2_7_0_,
+        newspapera0_.engagement_rate as engageme3_7_0_,
+        newspapera0_.likes as likes4_7_0_,
+        newspapera0_.shares as shares5_7_0_,
+        newspapera0_.views as views6_7_0_ 
+    from
+        newspaper_analytics newspapera0_ 
+    where
+        newspapera0_.analytics_id=?
+Hibernate: 
+    delete 
+    from
+        newspaper 
+    where
+        entity_id=?
+Hibernate: 
+    select
+        owner0_.entity_id as entity_i1_9_,
+        owner0_.analytics_id as analytic3_9_,
+        owner0_.name as name2_9_ 
+    from
+        owner owner0_
+Hibernate: 
+    select
+        publisher0_.entity_id as entity_i1_12_,
+        publisher0_.analytics_id as analytic3_12_,
+        publisher0_.name as name2_12_ 
+    from
+        publisher publisher0_
+Hibernate: 
+    select
+        author0_.entity_id as entity_i1_3_,
+        author0_.analytics_id as analytic3_3_,
+        author0_.name as name2_3_ 
+    from
+        author author0_
+Hibernate: 
+    select
+        articleana0_.analytics_id as analytic1_1_,
+        articleana0_.bias as bias2_1_,
+        articleana0_.engagement_rate as engageme3_1_,
+        articleana0_.likes as likes4_1_,
+        articleana0_.shares as shares5_1_,
+        articleana0_.views as views6_1_ 
+    from
+        article_analytics articleana0_
+Hibernate: 
+    select
+        newspapera0_.analytics_id as analytic1_7_,
+        newspapera0_.bias as bias2_7_,
+        newspapera0_.engagement_rate as engageme3_7_,
+        newspapera0_.likes as likes4_7_,
+        newspapera0_.shares as shares5_7_,
+        newspapera0_.views as views6_7_ 
+    from
+        newspaper_analytics newspapera0_
+Hibernate: 
+    delete 
+    from
+        newspaper_analytics 
+    where
+        analytics_id=?
+Hibernate: 
+    select
+        owneranaly0_.analytics_id as analytic1_10_,
+        owneranaly0_.bias as bias2_10_,
+        owneranaly0_.engagement_rate as engageme3_10_,
+        owneranaly0_.likes as likes4_10_,
+        owneranaly0_.shares as shares5_10_,
+        owneranaly0_.views as views6_10_ 
+    from
+        owner_analytics owneranaly0_
+Hibernate: 
+    select
+        publishera0_.analytics_id as analytic1_13_,
+        publishera0_.bias as bias2_13_,
+        publishera0_.engagement_rate as engageme3_13_,
+        publishera0_.likes as likes4_13_,
+        publishera0_.shares as shares5_13_,
+        publishera0_.views as views6_13_ 
+    from
+        publisher_analytics publishera0_
+Hibernate: 
+    select
+        authoranal0_.analytics_id as analytic1_4_,
+        authoranal0_.bias as bias2_4_,
+        authoranal0_.engagement_rate as engageme3_4_,
+        authoranal0_.likes as likes4_4_,
+        authoranal0_.shares as shares5_4_,
+        authoranal0_.views as views6_4_ 
+    from
+        author_analytics authoranal0_
+Hibernate: 
+    insert 
+    into
+        newspaper_analytics
+        (bias, engagement_rate, likes, shares, views) 
+    values
+        (?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        newspaper
+        (analytics_id, name) 
+    values
+        (?, ?)
+Hibernate: 
+    select
+        newspaper0_.entity_id as entity_i1_6_,
+        newspaper0_.analytics_id as analytic3_6_,
+        newspaper0_.name as name2_6_ 
+    from
+        newspaper newspaper0_
+Hibernate: 
+    select
+        newspapera0_.analytics_id as analytic1_7_0_,
+        newspapera0_.bias as bias2_7_0_,
+        newspapera0_.engagement_rate as engageme3_7_0_,
+        newspapera0_.likes as likes4_7_0_,
+        newspapera0_.shares as shares5_7_0_,
+        newspapera0_.views as views6_7_0_ 
+    from
+        newspaper_analytics newspapera0_ 
+    where
+        newspapera0_.analytics_id=?
+Hibernate: 
+    select
+        article0_.entity_id as entity_i1_0_,
+        article0_.analytics_id as analytic4_0_,
+        article0_.name as name2_0_,
+        article0_.author_id as author_i5_0_,
+        article0_.content as content3_0_,
+        article0_.newspaper_id as newspape6_0_,
+        article0_.owner_id as owner_id7_0_,
+        article0_.publisher_id as publishe8_0_ 
+    from
+        article article0_
+Hibernate: 
+    select
+        newspaper0_.entity_id as entity_i1_6_,
+        newspaper0_.analytics_id as analytic3_6_,
+        newspaper0_.name as name2_6_ 
+    from
+        newspaper newspaper0_
+Hibernate: 
+    select
+        newspapera0_.analytics_id as analytic1_7_0_,
+        newspapera0_.bias as bias2_7_0_,
+        newspapera0_.engagement_rate as engageme3_7_0_,
+        newspapera0_.likes as likes4_7_0_,
+        newspapera0_.shares as shares5_7_0_,
+        newspapera0_.views as views6_7_0_ 
+    from
+        newspaper_analytics newspapera0_ 
+    where
+        newspapera0_.analytics_id=?
+Hibernate: 
+    delete 
+    from
+        newspaper 
+    where
+        entity_id=?
+Hibernate: 
+    select
+        owner0_.entity_id as entity_i1_9_,
+        owner0_.analytics_id as analytic3_9_,
+        owner0_.name as name2_9_ 
+    from
+        owner owner0_
+Hibernate: 
+    select
+        publisher0_.entity_id as entity_i1_12_,
+        publisher0_.analytics_id as analytic3_12_,
+        publisher0_.name as name2_12_ 
+    from
+        publisher publisher0_
+Hibernate: 
+    select
+        author0_.entity_id as entity_i1_3_,
+        author0_.analytics_id as analytic3_3_,
+        author0_.name as name2_3_ 
+    from
+        author author0_
+Hibernate: 
+    select
+        articleana0_.analytics_id as analytic1_1_,
+        articleana0_.bias as bias2_1_,
+        articleana0_.engagement_rate as engageme3_1_,
+        articleana0_.likes as likes4_1_,
+        articleana0_.shares as shares5_1_,
+        articleana0_.views as views6_1_ 
+    from
+        article_analytics articleana0_
+Hibernate: 
+    select
+        newspapera0_.analytics_id as analytic1_7_,
+        newspapera0_.bias as bias2_7_,
+        newspapera0_.engagement_rate as engageme3_7_,
+        newspapera0_.likes as likes4_7_,
+        newspapera0_.shares as shares5_7_,
+        newspapera0_.views as views6_7_ 
+    from
+        newspaper_analytics newspapera0_
+Hibernate: 
+    delete 
+    from
+        newspaper_analytics 
+    where
+        analytics_id=?
+Hibernate: 
+    select
+        owneranaly0_.analytics_id as analytic1_10_,
+        owneranaly0_.bias as bias2_10_,
+        owneranaly0_.engagement_rate as engageme3_10_,
+        owneranaly0_.likes as likes4_10_,
+        owneranaly0_.shares as shares5_10_,
+        owneranaly0_.views as views6_10_ 
+    from
+        owner_analytics owneranaly0_
+Hibernate: 
+    select
+        publishera0_.analytics_id as analytic1_13_,
+        publishera0_.bias as bias2_13_,
+        publishera0_.engagement_rate as engageme3_13_,
+        publishera0_.likes as likes4_13_,
+        publishera0_.shares as shares5_13_,
+        publishera0_.views as views6_13_ 
+    from
+        publisher_analytics publishera0_
+Hibernate: 
+    select
+        authoranal0_.analytics_id as analytic1_4_,
+        authoranal0_.bias as bias2_4_,
+        authoranal0_.engagement_rate as engageme3_4_,
+        authoranal0_.likes as likes4_4_,
+        authoranal0_.shares as shares5_4_,
+        authoranal0_.views as views6_4_ 
+    from
+        author_analytics authoranal0_
+Hibernate: 
+    insert 
+    into
+        newspaper_analytics
+        (bias, engagement_rate, likes, shares, views) 
+    values
+        (?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        newspaper
+        (analytics_id, name) 
+    values
+        (?, ?)
+Hibernate: 
+    select
+        newspaper0_.entity_id as entity_i1_6_0_,
+        newspaper0_.analytics_id as analytic3_6_0_,
+        newspaper0_.name as name2_6_0_,
+        newspapera1_.analytics_id as analytic1_7_1_,
+        newspapera1_.bias as bias2_7_1_,
+        newspapera1_.engagement_rate as engageme3_7_1_,
+        newspapera1_.likes as likes4_7_1_,
+        newspapera1_.shares as shares5_7_1_,
+        newspapera1_.views as views6_7_1_ 
+    from
+        newspaper newspaper0_ 
+    inner join
+        newspaper_analytics newspapera1_ 
+            on newspaper0_.analytics_id=newspapera1_.analytics_id 
+    where
+        newspaper0_.entity_id=?
+Hibernate: 
+    select
+        article0_.entity_id as entity_i1_0_,
+        article0_.analytics_id as analytic4_0_,
+        article0_.name as name2_0_,
+        article0_.author_id as author_i5_0_,
+        article0_.content as content3_0_,
+        article0_.newspaper_id as newspape6_0_,
+        article0_.owner_id as owner_id7_0_,
+        article0_.publisher_id as publishe8_0_ 
+    from
+        article article0_
+Hibernate: 
+    select
+        newspaper0_.entity_id as entity_i1_6_,
+        newspaper0_.analytics_id as analytic3_6_,
+        newspaper0_.name as name2_6_ 
+    from
+        newspaper newspaper0_
+Hibernate: 
+    select
+        newspapera0_.analytics_id as analytic1_7_0_,
+        newspapera0_.bias as bias2_7_0_,
+        newspapera0_.engagement_rate as engageme3_7_0_,
+        newspapera0_.likes as likes4_7_0_,
+        newspapera0_.shares as shares5_7_0_,
+        newspapera0_.views as views6_7_0_ 
+    from
+        newspaper_analytics newspapera0_ 
+    where
+        newspapera0_.analytics_id=?
+Hibernate: 
+    delete 
+    from
+        newspaper 
+    where
+        entity_id=?
+Hibernate: 
+    select
+        owner0_.entity_id as entity_i1_9_,
+        owner0_.analytics_id as analytic3_9_,
+        owner0_.name as name2_9_ 
+    from
+        owner owner0_
+Hibernate: 
+    select
+        publisher0_.entity_id as entity_i1_12_,
+        publisher0_.analytics_id as analytic3_12_,
+        publisher0_.name as name2_12_ 
+    from
+        publisher publisher0_
+Hibernate: 
+    select
+        author0_.entity_id as entity_i1_3_,
+        author0_.analytics_id as analytic3_3_,
+        author0_.name as name2_3_ 
+    from
+        author author0_
+Hibernate: 
+    select
+        articleana0_.analytics_id as analytic1_1_,
+        articleana0_.bias as bias2_1_,
+        articleana0_.engagement_rate as engageme3_1_,
+        articleana0_.likes as likes4_1_,
+        articleana0_.shares as shares5_1_,
+        articleana0_.views as views6_1_ 
+    from
+        article_analytics articleana0_
+Hibernate: 
+    select
+        newspapera0_.analytics_id as analytic1_7_,
+        newspapera0_.bias as bias2_7_,
+        newspapera0_.engagement_rate as engageme3_7_,
+        newspapera0_.likes as likes4_7_,
+        newspapera0_.shares as shares5_7_,
+        newspapera0_.views as views6_7_ 
+    from
+        newspaper_analytics newspapera0_
+Hibernate: 
+    delete 
+    from
+        newspaper_analytics 
+    where
+        analytics_id=?
+Hibernate: 
+    select
+        owneranaly0_.analytics_id as analytic1_10_,
+        owneranaly0_.bias as bias2_10_,
+        owneranaly0_.engagement_rate as engageme3_10_,
+        owneranaly0_.likes as likes4_10_,
+        owneranaly0_.shares as shares5_10_,
+        owneranaly0_.views as views6_10_ 
+    from
+        owner_analytics owneranaly0_
+Hibernate: 
+    select
+        publishera0_.analytics_id as analytic1_13_,
+        publishera0_.bias as bias2_13_,
+        publishera0_.engagement_rate as engageme3_13_,
+        publishera0_.likes as likes4_13_,
+        publishera0_.shares as shares5_13_,
+        publishera0_.views as views6_13_ 
+    from
+        publisher_analytics publishera0_
+Hibernate: 
+    select
+        authoranal0_.analytics_id as analytic1_4_,
+        authoranal0_.bias as bias2_4_,
+        authoranal0_.engagement_rate as engageme3_4_,
+        authoranal0_.likes as likes4_4_,
+        authoranal0_.shares as shares5_4_,
+        authoranal0_.views as views6_4_ 
+    from
+        author_analytics authoranal0_
+Hibernate: 
+    insert 
+    into
+        newspaper_analytics
+        (bias, engagement_rate, likes, shares, views) 
+    values
+        (?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        newspaper
+        (analytics_id, name) 
+    values
+        (?, ?)
+Hibernate: 
+    select
+        newspaper0_.entity_id as entity_i1_6_,
+        newspaper0_.analytics_id as analytic3_6_,
+        newspaper0_.name as name2_6_ 
+    from
+        newspaper newspaper0_
+Hibernate: 
+    select
+        newspapera0_.analytics_id as analytic1_7_0_,
+        newspapera0_.bias as bias2_7_0_,
+        newspapera0_.engagement_rate as engageme3_7_0_,
+        newspapera0_.likes as likes4_7_0_,
+        newspapera0_.shares as shares5_7_0_,
+        newspapera0_.views as views6_7_0_ 
+    from
+        newspaper_analytics newspapera0_ 
+    where
+        newspapera0_.analytics_id=?
+Hibernate: 
+    select
+        newspaper0_.entity_id as entity_i1_6_0_,
+        newspaper0_.analytics_id as analytic3_6_0_,
+        newspaper0_.name as name2_6_0_,
+        newspapera1_.analytics_id as analytic1_7_1_,
+        newspapera1_.bias as bias2_7_1_,
+        newspapera1_.engagement_rate as engageme3_7_1_,
+        newspapera1_.likes as likes4_7_1_,
+        newspapera1_.shares as shares5_7_1_,
+        newspapera1_.views as views6_7_1_ 
+    from
+        newspaper newspaper0_ 
+    inner join
+        newspaper_analytics newspapera1_ 
+            on newspaper0_.analytics_id=newspapera1_.analytics_id 
+    where
+        newspaper0_.entity_id=?
+Hibernate: 
+    select
+        article0_.entity_id as entity_i1_0_,
+        article0_.analytics_id as analytic4_0_,
+        article0_.name as name2_0_,
+        article0_.author_id as author_i5_0_,
+        article0_.content as content3_0_,
+        article0_.newspaper_id as newspape6_0_,
+        article0_.owner_id as owner_id7_0_,
+        article0_.publisher_id as publishe8_0_ 
+    from
+        article article0_
+Hibernate: 
+    select
+        newspaper0_.entity_id as entity_i1_6_,
+        newspaper0_.analytics_id as analytic3_6_,
+        newspaper0_.name as name2_6_ 
+    from
+        newspaper newspaper0_
+Hibernate: 
+    select
+        newspapera0_.analytics_id as analytic1_7_0_,
+        newspapera0_.bias as bias2_7_0_,
+        newspapera0_.engagement_rate as engageme3_7_0_,
+        newspapera0_.likes as likes4_7_0_,
+        newspapera0_.shares as shares5_7_0_,
+        newspapera0_.views as views6_7_0_ 
+    from
+        newspaper_analytics newspapera0_ 
+    where
+        newspapera0_.analytics_id=?
+Hibernate: 
+    delete 
+    from
+        newspaper 
+    where
+        entity_id=?
+Hibernate: 
+    select
+        owner0_.entity_id as entity_i1_9_,
+        owner0_.analytics_id as analytic3_9_,
+        owner0_.name as name2_9_ 
+    from
+        owner owner0_
+Hibernate: 
+    select
+        publisher0_.entity_id as entity_i1_12_,
+        publisher0_.analytics_id as analytic3_12_,
+        publisher0_.name as name2_12_ 
+    from
+        publisher publisher0_
+Hibernate: 
+    select
+        author0_.entity_id as entity_i1_3_,
+        author0_.analytics_id as analytic3_3_,
+        author0_.name as name2_3_ 
+    from
+        author author0_
+Hibernate: 
+    select
+        articleana0_.analytics_id as analytic1_1_,
+        articleana0_.bias as bias2_1_,
+        articleana0_.engagement_rate as engageme3_1_,
+        articleana0_.likes as likes4_1_,
+        articleana0_.shares as shares5_1_,
+        articleana0_.views as views6_1_ 
+    from
+        article_analytics articleana0_
+Hibernate: 
+    select
+        newspapera0_.analytics_id as analytic1_7_,
+        newspapera0_.bias as bias2_7_,
+        newspapera0_.engagement_rate as engageme3_7_,
+        newspapera0_.likes as likes4_7_,
+        newspapera0_.shares as shares5_7_,
+        newspapera0_.views as views6_7_ 
+    from
+        newspaper_analytics newspapera0_
+Hibernate: 
+    delete 
+    from
+        newspaper_analytics 
+    where
+        analytics_id=?
+Hibernate: 
+    select
+        owneranaly0_.analytics_id as analytic1_10_,
+        owneranaly0_.bias as bias2_10_,
+        owneranaly0_.engagement_rate as engageme3_10_,
+        owneranaly0_.likes as likes4_10_,
+        owneranaly0_.shares as shares5_10_,
+        owneranaly0_.views as views6_10_ 
+    from
+        owner_analytics owneranaly0_
+Hibernate: 
+    select
+        publishera0_.analytics_id as analytic1_13_,
+        publishera0_.bias as bias2_13_,
+        publishera0_.engagement_rate as engageme3_13_,
+        publishera0_.likes as likes4_13_,
+        publishera0_.shares as shares5_13_,
+        publishera0_.views as views6_13_ 
+    from
+        publisher_analytics publishera0_
+Hibernate: 
+    select
+        authoranal0_.analytics_id as analytic1_4_,
+        authoranal0_.bias as bias2_4_,
+        authoranal0_.engagement_rate as engageme3_4_,
+        authoranal0_.likes as likes4_4_,
+        authoranal0_.shares as shares5_4_,
+        authoranal0_.views as views6_4_ 
+    from
+        author_analytics authoranal0_
+Hibernate: 
+    insert 
+    into
+        newspaper_analytics
+        (bias, engagement_rate, likes, shares, views) 
+    values
+        (?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        newspaper
+        (analytics_id, name) 
+    values
+        (?, ?)
+Hibernate: 
+    select
+        newspaper0_.entity_id as entity_i1_6_,
+        newspaper0_.analytics_id as analytic3_6_,
+        newspaper0_.name as name2_6_ 
+    from
+        newspaper newspaper0_
+Hibernate: 
+    select
+        newspapera0_.analytics_id as analytic1_7_0_,
+        newspapera0_.bias as bias2_7_0_,
+        newspapera0_.engagement_rate as engageme3_7_0_,
+        newspapera0_.likes as likes4_7_0_,
+        newspapera0_.shares as shares5_7_0_,
+        newspapera0_.views as views6_7_0_ 
+    from
+        newspaper_analytics newspapera0_ 
+    where
+        newspapera0_.analytics_id=?
+Hibernate: 
+    select
+        article0_.entity_id as entity_i1_0_,
+        article0_.analytics_id as analytic4_0_,
+        article0_.name as name2_0_,
+        article0_.author_id as author_i5_0_,
+        article0_.content as content3_0_,
+        article0_.newspaper_id as newspape6_0_,
+        article0_.owner_id as owner_id7_0_,
+        article0_.publisher_id as publishe8_0_ 
+    from
+        article article0_
+Hibernate: 
+    select
+        newspaper0_.entity_id as entity_i1_6_,
+        newspaper0_.analytics_id as analytic3_6_,
+        newspaper0_.name as name2_6_ 
+    from
+        newspaper newspaper0_
+Hibernate: 
+    select
+        newspapera0_.analytics_id as analytic1_7_0_,
+        newspapera0_.bias as bias2_7_0_,
+        newspapera0_.engagement_rate as engageme3_7_0_,
+        newspapera0_.likes as likes4_7_0_,
+        newspapera0_.shares as shares5_7_0_,
+        newspapera0_.views as views6_7_0_ 
+    from
+        newspaper_analytics newspapera0_ 
+    where
+        newspapera0_.analytics_id=?
+Hibernate: 
+    delete 
+    from
+        newspaper 
+    where
+        entity_id=?
+Hibernate: 
+    select
+        owner0_.entity_id as entity_i1_9_,
+        owner0_.analytics_id as analytic3_9_,
+        owner0_.name as name2_9_ 
+    from
+        owner owner0_
+Hibernate: 
+    select
+        publisher0_.entity_id as entity_i1_12_,
+        publisher0_.analytics_id as analytic3_12_,
+        publisher0_.name as name2_12_ 
+    from
+        publisher publisher0_
+Hibernate: 
+    select
+        author0_.entity_id as entity_i1_3_,
+        author0_.analytics_id as analytic3_3_,
+        author0_.name as name2_3_ 
+    from
+        author author0_
+Hibernate: 
+    select
+        articleana0_.analytics_id as analytic1_1_,
+        articleana0_.bias as bias2_1_,
+        articleana0_.engagement_rate as engageme3_1_,
+        articleana0_.likes as likes4_1_,
+        articleana0_.shares as shares5_1_,
+        articleana0_.views as views6_1_ 
+    from
+        article_analytics articleana0_
+Hibernate: 
+    select
+        newspapera0_.analytics_id as analytic1_7_,
+        newspapera0_.bias as bias2_7_,
+        newspapera0_.engagement_rate as engageme3_7_,
+        newspapera0_.likes as likes4_7_,
+        newspapera0_.shares as shares5_7_,
+        newspapera0_.views as views6_7_ 
+    from
+        newspaper_analytics newspapera0_
+Hibernate: 
+    delete 
+    from
+        newspaper_analytics 
+    where
+        analytics_id=?
+Hibernate: 
+    select
+        owneranaly0_.analytics_id as analytic1_10_,
+        owneranaly0_.bias as bias2_10_,
+        owneranaly0_.engagement_rate as engageme3_10_,
+        owneranaly0_.likes as likes4_10_,
+        owneranaly0_.shares as shares5_10_,
+        owneranaly0_.views as views6_10_ 
+    from
+        owner_analytics owneranaly0_
+Hibernate: 
+    select
+        publishera0_.analytics_id as analytic1_13_,
+        publishera0_.bias as bias2_13_,
+        publishera0_.engagement_rate as engageme3_13_,
+        publishera0_.likes as likes4_13_,
+        publishera0_.shares as shares5_13_,
+        publishera0_.views as views6_13_ 
+    from
+        publisher_analytics publishera0_
+Hibernate: 
+    select
+        authoranal0_.analytics_id as analytic1_4_,
+        authoranal0_.bias as bias2_4_,
+        authoranal0_.engagement_rate as engageme3_4_,
+        authoranal0_.likes as likes4_4_,
+        authoranal0_.shares as shares5_4_,
+        authoranal0_.views as views6_4_ 
+    from
+        author_analytics authoranal0_
+Hibernate: 
+    insert 
+    into
+        newspaper_analytics
+        (bias, engagement_rate, likes, shares, views) 
+    values
+        (?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        newspaper
+        (analytics_id, name) 
+    values
+        (?, ?)
+Hibernate: 
+    select
+        newspaper0_.entity_id as entity_i1_6_,
+        newspaper0_.analytics_id as analytic3_6_,
+        newspaper0_.name as name2_6_ 
+    from
+        newspaper newspaper0_
+Hibernate: 
+    select
+        newspapera0_.analytics_id as analytic1_7_0_,
+        newspapera0_.bias as bias2_7_0_,
+        newspapera0_.engagement_rate as engageme3_7_0_,
+        newspapera0_.likes as likes4_7_0_,
+        newspapera0_.shares as shares5_7_0_,
+        newspapera0_.views as views6_7_0_ 
+    from
+        newspaper_analytics newspapera0_ 
+    where
+        newspapera0_.analytics_id=?
+Hibernate: 
+    delete 
+    from
+        newspaper 
+    where
+        entity_id=?
+Hibernate: 
+    select
+        newspaper0_.entity_id as entity_i1_6_,
+        newspaper0_.analytics_id as analytic3_6_,
+        newspaper0_.name as name2_6_ 
+    from
+        newspaper newspaper0_
+Hibernate: 
+    select
+        article0_.entity_id as entity_i1_0_,
+        article0_.analytics_id as analytic4_0_,
+        article0_.name as name2_0_,
+        article0_.author_id as author_i5_0_,
+        article0_.content as content3_0_,
+        article0_.newspaper_id as newspape6_0_,
+        article0_.owner_id as owner_id7_0_,
+        article0_.publisher_id as publishe8_0_ 
+    from
+        article article0_
+Hibernate: 
+    select
+        newspaper0_.entity_id as entity_i1_6_,
+        newspaper0_.analytics_id as analytic3_6_,
+        newspaper0_.name as name2_6_ 
+    from
+        newspaper newspaper0_
+Hibernate: 
+    select
+        owner0_.entity_id as entity_i1_9_,
+        owner0_.analytics_id as analytic3_9_,
+        owner0_.name as name2_9_ 
+    from
+        owner owner0_
+Hibernate: 
+    select
+        publisher0_.entity_id as entity_i1_12_,
+        publisher0_.analytics_id as analytic3_12_,
+        publisher0_.name as name2_12_ 
+    from
+        publisher publisher0_
+Hibernate: 
+    select
+        author0_.entity_id as entity_i1_3_,
+        author0_.analytics_id as analytic3_3_,
+        author0_.name as name2_3_ 
+    from
+        author author0_
+Hibernate: 
+    select
+        articleana0_.analytics_id as analytic1_1_,
+        articleana0_.bias as bias2_1_,
+        articleana0_.engagement_rate as engageme3_1_,
+        articleana0_.likes as likes4_1_,
+        articleana0_.shares as shares5_1_,
+        articleana0_.views as views6_1_ 
+    from
+        article_analytics articleana0_
+Hibernate: 
+    select
+        newspapera0_.analytics_id as analytic1_7_,
+        newspapera0_.bias as bias2_7_,
+        newspapera0_.engagement_rate as engageme3_7_,
+        newspapera0_.likes as likes4_7_,
+        newspapera0_.shares as shares5_7_,
+        newspapera0_.views as views6_7_ 
+    from
+        newspaper_analytics newspapera0_
+Hibernate: 
+    delete 
+    from
+        newspaper_analytics 
+    where
+        analytics_id=?
+Hibernate: 
+    select
+        owneranaly0_.analytics_id as analytic1_10_,
+        owneranaly0_.bias as bias2_10_,
+        owneranaly0_.engagement_rate as engageme3_10_,
+        owneranaly0_.likes as likes4_10_,
+        owneranaly0_.shares as shares5_10_,
+        owneranaly0_.views as views6_10_ 
+    from
+        owner_analytics owneranaly0_
+Hibernate: 
+    select
+        publishera0_.analytics_id as analytic1_13_,
+        publishera0_.bias as bias2_13_,
+        publishera0_.engagement_rate as engageme3_13_,
+        publishera0_.likes as likes4_13_,
+        publishera0_.shares as shares5_13_,
+        publishera0_.views as views6_13_ 
+    from
+        publisher_analytics publishera0_
+Hibernate: 
+    select
+        authoranal0_.analytics_id as analytic1_4_,
+        authoranal0_.bias as bias2_4_,
+        authoranal0_.engagement_rate as engageme3_4_,
+        authoranal0_.likes as likes4_4_,
+        authoranal0_.shares as shares5_4_,
+        authoranal0_.views as views6_4_ 
+    from
+        author_analytics authoranal0_
+Hibernate: 
+    insert 
+    into
+        newspaper_analytics
+        (bias, engagement_rate, likes, shares, views) 
+    values
+        (?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        newspaper
+        (analytics_id, name) 
+    values
+        (?, ?)
+Hibernate: 
+    select
+        newspaper0_.entity_id as entity_i1_6_,
+        newspaper0_.analytics_id as analytic3_6_,
+        newspaper0_.name as name2_6_ 
+    from
+        newspaper newspaper0_ 
+    where
+        newspaper0_.name=?
+Hibernate: 
+    select
+        newspapera0_.analytics_id as analytic1_7_0_,
+        newspapera0_.bias as bias2_7_0_,
+        newspapera0_.engagement_rate as engageme3_7_0_,
+        newspapera0_.likes as likes4_7_0_,
+        newspapera0_.shares as shares5_7_0_,
+        newspapera0_.views as views6_7_0_ 
+    from
+        newspaper_analytics newspapera0_ 
+    where
+        newspapera0_.analytics_id=?
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 7.6</a> at Aug 14, 2024, 3:18:08 PM</p>
+</div>
+</div>
+</body>
+</html>

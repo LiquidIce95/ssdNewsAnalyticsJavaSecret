@@ -4,16 +4,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import ssd.Entities.Newspaper.Base.Newspaper;
 import ssd.Entities.Newspaper.Base.NewspaperRepository;
-import ssd.Entities.Newspaper.Base.RESTapi.DTO.NewspaperGetDTO;
-import ssd.Entities.Newspaper.Base.RESTapi.DTO.NewspaperPostDTO;
-import ssd.Entities.Newspaper.Base.RESTapi.DTO.NewspaperPutDTO;
+import ssd.Entities.Newspaper.Raw.NewspaperRaw;
+import ssd.Entities.Newspaper.Raw.RESTapi.NewspaperRawDTO;
+import ssd.Entities.Newspaper.NewspaperMapper;
+import ssd.Entities.Newspaper.Analytics.NewspaperAnalytics;
+import ssd.Entities.Newspaper.Analytics.RESTapi.NewspaperAnalyticsDTO;
 import ssd.AbstractClasses.Base.RESTapi.BaseEntityController;
 
 @RestController
 @RequestMapping("/newspapers")
-public class NewspaperController extends BaseEntityController<Newspaper, NewspaperRepository, NewspaperGetDTO, NewspaperPostDTO, NewspaperPutDTO, NewspaperMapper> {
+public class NewspaperController extends BaseEntityController<NewspaperAnalytics, NewspaperAnalyticsDTO, Newspaper, NewspaperDTO, NewspaperRaw, NewspaperRawDTO, NewspaperRepository, NewspaperMapper> {
 
-    public NewspaperController(NewspaperRepository repository, NewspaperMapper mapper) {
-        super(repository, mapper);
+    public NewspaperController(NewspaperRepository repository) {
+        super(repository, new NewspaperMapper());
     }
 }

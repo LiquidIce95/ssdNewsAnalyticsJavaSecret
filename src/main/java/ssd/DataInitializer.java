@@ -23,10 +23,6 @@ import ssd.Entities.Publisher.Analytics.PublisherAnalytics;
 import ssd.Entities.Publisher.Analytics.PublisherAnalyticsRepository;
 import ssd.Entities.Publisher.Base.Publisher;
 import ssd.Entities.Publisher.Base.PublisherRepository;
-import ssd.Entities.Topic.Analytics.TopicAnalytics;
-import ssd.Entities.Topic.Analytics.TopicAnalyticsRepository;
-import ssd.Entities.Topic.Base.Topic;
-import ssd.Entities.Topic.Base.TopicRepository;
 
 @Component
 public class DataInitializer implements CommandLineRunner {
@@ -39,9 +35,6 @@ public class DataInitializer implements CommandLineRunner {
 
     @Autowired
     private PublisherRepository publisherRepository;
-
-    @Autowired
-    private TopicRepository topicRepository;
 
     @Autowired
     private OwnerRepository ownerRepository;
@@ -57,9 +50,6 @@ public class DataInitializer implements CommandLineRunner {
 
     @Autowired
     private PublisherAnalyticsRepository publisherAnalyticsRepository;
-
-    @Autowired
-    private TopicAnalyticsRepository topicAnalyticsRepository;
 
     @Autowired
     private OwnerAnalyticsRepository ownerAnalyticsRepository;
@@ -86,13 +76,6 @@ public class DataInitializer implements CommandLineRunner {
         publisherAnalytics.setEngagementRate(0.15);
         PublisherAnalytics savedPublisherAnalytics = publisherAnalyticsRepository.save(publisherAnalytics);
 
-        TopicAnalytics topicAnalytics = new TopicAnalytics();
-        topicAnalytics.setBias("Neutral");
-        topicAnalytics.setViews(12000);
-        topicAnalytics.setShares(450);
-        topicAnalytics.setLikes(300);
-        topicAnalytics.setEngagementRate(0.15);
-        TopicAnalytics savedTopicAnalytics = topicAnalyticsRepository.save(topicAnalytics);
 
         OwnerAnalytics ownerAnalytics = new OwnerAnalytics();
         ownerAnalytics.setBias("Neutral");
@@ -129,11 +112,6 @@ public class DataInitializer implements CommandLineRunner {
         publisher.setAnalytics(savedPublisherAnalytics);
         Publisher savedPublisher = publisherRepository.save(publisher);
 
-        Topic topic = new Topic();
-        topic.setName("Climate Change");
-        topic.setAnalytics(savedTopicAnalytics);
-        Topic savedTopic = topicRepository.save(topic);
-
         Owner owner = new Owner();
         owner.setName("John Smith");
         owner.setAnalytics(savedOwnerAnalytics);
@@ -148,7 +126,6 @@ public class DataInitializer implements CommandLineRunner {
         article.setName("The Impact of Climate Change on Coastal Communities");
         article.setAuthor(savedAuthor);
         article.setPublisher(savedPublisher);
-        article.setTopic(savedTopic);
         article.setOwner(savedOwner);
         article.setNewspaper(savedNewspaper);
         article.setContent("Coastal communities around the world are facing increasing threats from rising sea levels caused by climate change. This article explores the impact on these communities and the measures being taken to mitigate the damage.");
