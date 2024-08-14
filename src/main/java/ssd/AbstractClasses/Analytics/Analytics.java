@@ -26,6 +26,14 @@ public abstract class Analytics implements Serializable {
     @Column(name = "analytics_id")
     private Long id;
 
+    public Analytics(){
+      this.bias = "";
+      this.views = 0;
+      this.shares = 0;
+      this.likes = 0;
+      this.engagementRate = -1;
+    }
+
     // Getters and Setters
 
     public String getBias() {

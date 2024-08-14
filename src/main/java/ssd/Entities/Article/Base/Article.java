@@ -34,9 +34,15 @@ public class Article extends BaseEntity<ArticleAnalytics> {
     @Column(nullable = false, columnDefinition = "TEXT")
     private String content;
 
-    @ManyToOne
-    @JoinColumn(name = "article_analytics_id", nullable = false)
-    private ArticleAnalytics analytics;
+
+    public Article(){
+      super(ArticleAnalytics.class);
+      this.author = new Author();
+      this.publisher = new Publisher();
+      this.owner = new Owner();
+      this.newspaper = new Newspaper();
+      this.content = "";
+    }
 
     // Getters and Setters
 
@@ -81,11 +87,4 @@ public class Article extends BaseEntity<ArticleAnalytics> {
         this.content = content;
     }
 
-    public ArticleAnalytics getAnalytics() {
-        return analytics;
-    }
-
-    public void setAnalytics(ArticleAnalytics articleAnalytics) {
-        this.analytics = articleAnalytics;
-    }
 }

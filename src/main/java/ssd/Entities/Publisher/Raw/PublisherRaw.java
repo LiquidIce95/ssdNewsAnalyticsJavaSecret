@@ -10,4 +10,8 @@ import ssd.Entities.Publisher.Base.Publisher;
 @Table(name = "publisher_raw")
 public class PublisherRaw extends EntityRaw<Publisher> {
     // Additional fields or methods specific to ArticleRaw can be added here if needed
+
+    public PublisherRaw(){
+      super(Publisher.class);
+    }
 }

@@ -10,4 +10,7 @@ import ssd.Entities.Newspaper.Base.Newspaper;
 @Table(name = "newspaper_raw")
 public class NewspaperRaw extends EntityRaw<Newspaper> {
     // Additional fields or methods specific to ArticleRaw can be added here if needed
+    public NewspaperRaw(){
+      super(Newspaper.class);
+    }
 }

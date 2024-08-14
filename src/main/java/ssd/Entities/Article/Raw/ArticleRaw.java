@@ -10,4 +10,8 @@ import ssd.Entities.Article.Base.Article;
 @Table(name = "article_raw")
 public class ArticleRaw extends EntityRaw<Article> {
     // Additional fields or methods specific to ArticleRaw can be added here if needed
+
+    public ArticleRaw(){
+      super(Article.class);
+    }
 }

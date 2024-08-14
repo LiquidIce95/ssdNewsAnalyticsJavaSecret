@@ -172,6 +172,21 @@ public abstract class AbstractMapper<
         return entityRaw;
     }
 
+    public R createEntityRawFromDTO(RD dto){
+      R entityRaw = createEntityRawInstance();
+      entityRaw.setScrapeContent(dto.getScrapeContent());
+      entityRaw.setDate(dto.getDate());
+      entityRaw.setUrl(dto.getUrl());      
+      B baseEntity = createBaseEntityInstance();
+      A analyticsEntity = createAnalyticsInstance();
+
+      baseEntity.setAnalytics(analyticsEntity);
+      entityRaw.setBaseEntity(baseEntity);
+
+      return entityRaw;
+
+    }
+
     public R updateEntityRawFromDTO(RD dto, R entityRaw) {
         if (dto.getScrapeContent() != null) {
             entityRaw.setScrapeContent(dto.getScrapeContent());

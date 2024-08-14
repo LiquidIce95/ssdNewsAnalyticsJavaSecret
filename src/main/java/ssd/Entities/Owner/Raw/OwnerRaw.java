@@ -10,4 +10,7 @@ import ssd.Entities.Owner.Base.Owner;
 @Table(name = "owner_raw")
 public class OwnerRaw extends EntityRaw<Owner> {
     // Additional fields or methods specific to ArticleRaw can be added here if needed
+    public OwnerRaw(){
+      super(Owner.class);
+    }
 }

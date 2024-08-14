@@ -23,7 +23,7 @@ public abstract class EntityRaw<T extends BaseEntity<? extends Analytics>> imple
     private String url;
 
     @ManyToOne
-    @JoinColumn(name = "entity_id",nullable = false)
+    @JoinColumn(name = "entity_id", nullable = false)
     private T baseEntity;
 
     @Id
@@ -31,14 +31,26 @@ public abstract class EntityRaw<T extends BaseEntity<? extends Analytics>> imple
     @Column(name = "entity_raw_id")
     private Long id;
 
+    // Constructor that accepts Class<T> for instantiation
+    public EntityRaw(Class<T> baseEntityClass) {
+        this.scrapeContent = "defaultScrapeContent";
+        this.date = new Date(); // Setting current date as default
+        this.url = "defaultUrl";
+        try {
+            this.baseEntity = baseEntityClass.getDeclaredConstructor().newInstance();
+        } catch (Exception e) {
+            throw new RuntimeException("Failed to create instance of " + baseEntityClass.getName(), e);
+        }
+    }
+
     // Getters and Setters
 
     public Long getId() {
-      return id;
+        return id;
     }
 
     public void setId(Long id) {
-      this.id = id;
+        this.id = id;
     }
 
     public String getScrapeContent() {
@@ -73,3 +85,4 @@ public abstract class EntityRaw<T extends BaseEntity<? extends Analytics>> imple
         this.baseEntity = baseEntity;
     }
 }
+

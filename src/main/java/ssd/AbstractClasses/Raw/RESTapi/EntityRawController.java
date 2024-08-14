@@ -40,7 +40,7 @@ public abstract class EntityRawController<
     
         @PostMapping("/")
         public ResponseEntity<RD> createRawEntity(@RequestBody RD postDTO) {
-            R entity = mapper.convertDTOToEntityRaw(postDTO);
+            R entity = mapper.createEntityRawFromDTO(postDTO);
             R savedEntity = repository.saveAndFlush(entity);
             RD getDTO = mapper.convertEntityRawToDTO(savedEntity);
             return new ResponseEntity<>(getDTO, HttpStatus.CREATED);

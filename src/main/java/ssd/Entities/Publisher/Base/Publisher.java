@@ -8,5 +8,7 @@ import ssd.Entities.Publisher.Analytics.PublisherAnalytics;
 @Entity
 @Table(name = "publisher")
 public class Publisher extends BaseEntity<PublisherAnalytics> {
-
+  public Publisher(){
+    super(PublisherAnalytics.class);
+  }
 }

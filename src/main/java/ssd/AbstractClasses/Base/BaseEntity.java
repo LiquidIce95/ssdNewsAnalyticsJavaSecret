@@ -21,7 +21,16 @@ public abstract class BaseEntity<T extends Analytics> implements Serializable{
     @Column(name = "entity_id")
     private Long id;
 
-   
+    // Constructor that accepts Class<T> for instantiation
+    public BaseEntity(Class<T> analyticsClass) {
+      this.name = "defaultName";
+      try {
+          this.analytics = analyticsClass.getDeclaredConstructor().newInstance();
+      } catch (Exception e) {
+          throw new RuntimeException("Failed to create instance of " + analyticsClass.getName(), e);
+      }
+  }
+
     // Getters and Setters
 
     public Long getId() {

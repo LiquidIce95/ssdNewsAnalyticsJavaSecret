@@ -10,4 +10,7 @@ import ssd.Entities.Author.Base.Author;
 @Table(name = "author_raw")
 public class AuthorRaw extends EntityRaw<Author> {
     // Additional fields or methods specific to ArticleRaw can be added here if needed
+    public AuthorRaw(){
+      super(Author.class);
+    }
 }

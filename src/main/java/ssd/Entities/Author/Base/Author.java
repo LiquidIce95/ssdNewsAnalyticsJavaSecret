@@ -9,5 +9,7 @@ import ssd.Entities.Author.Analytics.AuthorAnalytics;
 @Table(name = "author")
 public class Author extends BaseEntity<AuthorAnalytics>{
 
-    
+   public Author(){
+    super(AuthorAnalytics.class);
+   } 
 }
